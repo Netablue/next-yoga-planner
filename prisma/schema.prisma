@@ -20,8 +20,11 @@ model User {
   createdAt DateTime @default(now())
 }
 
-model Brewery {
-  id          Int     @id @default(autoincrement())
-  name        String
-  description String?
+model Classes {
+  id       Int     @id @default(autoincrement())
+  day      String
+  class    String
+  category String
+  line     String
+  duration String
 }
