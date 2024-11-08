@@ -1,24 +1,12 @@
-# BreweryProfile
+# Next Yoga Planner
 
-BreweryProfile is a RESTful API built with [Next.js](https://nextjs.org/). It allows users to retrieve detailed information about breweries, including their history, background, and a range of beers they offer. This project aims to provide an easy-to-use API for accessing brewery data by name, making it ideal for beer enthusiasts, app developers, and data integrators.
-
-<!-- <p align="center">
-    <a href="#" target="_blank">
-        <img src="public/screen.JPG" width="600" alt="BreweryProfile API Screenshot">
-    </a>
-</p> -->
+Next Yoga Planner is a Next.js application designed to help yoga enthusiasts plan and organize their yoga routines. This project aims to provide an intuitive, user-friendly interface for creating, customizing, and tracking yoga sessions. Ideal for both beginners and experienced practitioners, Next Yoga Planner makes it easy to tailor yoga plans to individual needs.
 
 ## Features
 
-- **Next.js API Routes**: Utilizes Next.js's API capabilities for creating serverless endpoints to fetch brewery data.
-- **Data Retrieval**: Fetches a brewery's summary, history, and beer range based on the brewery's name.
-- **Scalable and Performant**: Designed for performance with server-side rendering (SSR) and static site generation (SSG).
-- **Flexible Querying**: Allows users to search for breweries using a simple and intuitive query structure.
-- **SEO-Friendly**: Built with SEO in mind to ensure optimal search engine visibility for the API documentation.
-
-## License
-
-**All rights reserved**. This project and its content, including but not limited to code, documentation, and assets, are the exclusive property of the author. Unauthorized copying, modification, distribution, or use of any part of this project is strictly prohibited without prior written permission from the author.
-
-For inquiries regarding usage, please contact [contact@netablue.fr]."# next-yoga-planner" 
-"# next-yoga-planner" 
+- **Next.js API Routes**: Utilizes Next.js API capabilities to create serverless endpoints for session data retrieval and storage.
+- **Session Customization**: Allows users to select and arrange various yoga poses and customize session length, difficulty, and style.
+- **Progress Tracking**: Tracks user progress over time, providing insights into completed sessions, improvements, and goals.
+- **User Authentication**: Secures user data with built-in authentication and account management.
+- **Responsive Design**: Designed to work seamlessly on desktop, tablet, and mobile devices.
+- **Scalable and Performant**: Built with performance in mind using server-side rendering (SSR) and static site generation (SSG).
