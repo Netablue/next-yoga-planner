@@ -5,30 +5,75 @@ const prisma = new PrismaClient();
 async function main() {
 
   // Clear the table before seeding
-  await prisma.brewery.deleteMany();
+  await prisma.users.deleteMany();
+  await prisma.classes.deleteMany();
 
-  await prisma.brewery.createMany({
+  await prisma.users.createMany({
     data: [
       {
         id: 1,
-        name: "Tete de Mule",
-        description: "Créée en 2014, notre brasserie artisanale se situe à Coulon au coeur du Marais Poitevin dans un environnement naturel et préservé.    Nous avons implanté nos cuves de brassage dans une ancienne laiterie, un ancien site industriel réhabilité par le Parc régional du Marais Poitevin."
+        name: "Tiya",
+        email: "tiya@nyp.com",
+        createdAt: new Date(),
       },
       {
         id: 2,
-        name: "Mont Blanc",
-        description: "Produits de qualité inspirés par les Alpes françaises."
+        name: "Werner",
+        email: "werner@nyp.com",
+        createdAt: new Date(),
       },
       {
         id: 3,
-        name: "Cimes",
-        description: "Une expérience unique de bière dans les montagnes."
+        name: "Coltran",
+        email: "coltran@nyp.com",
+        createdAt: new Date(),
+      },
+      {
+        id: 4,
+        name: "Evata",
+        email: "evata@nyp.com",
+        createdAt: new Date(),
       },
     ],
   });
 
+  await prisma.classes.createMany({
+    data: [
+      {
+        id: 1,
+        day: "Monday",
+        title: "Morning Yoga",
+        line: "Strength",
+        level: "Beginner",
+        category: "Yoga",
+        duration: 60, // Duration in minutes
+        commentary: "A great way to start the week.",
+      },
+      {
+        id: 2,
+        day: "Wednesday",
+        title: "Midweek Flow",
+        line: "Flexibility",
+        level: "Intermediate",
+        category: "Yoga",
+        duration: 45,
+        commentary: "A perfect balance for the middle of the week.",
+      },
+      {
+        id: 3,
+        day: "Friday",
+        title: "Weekend Wind-Down",
+        line: "Relaxation",
+        level: "Beginner",
+        category: "Yoga",
+        duration: 30,
+        commentary: "Relax and wind down for the weekend.",
+      },
+    ]
+  })
+
   // Success message
-  console.log("Seed data successfully inserted into the brewery table!");
+  console.log("Seed data successfully inserted into the Users and Classes tables!");
 }
 
 main()
