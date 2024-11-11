@@ -1,43 +1,48 @@
 import { PrismaClient } from '@prisma/client';
+import bcrypt from 'bcrypt';
 
 const prisma = new PrismaClient();
 
 async function main() {
 
   // Clear the table before seeding
-  await prisma.users.deleteMany();
-  await prisma.classes.deleteMany();
+  await prisma.user.deleteMany();
+  await prisma.classe.deleteMany();
 
-  await prisma.users.createMany({
+  await prisma.user.createMany({
     data: [
       {
         id: 1,
         name: "Tiya",
         email: "tiya@nyp.com",
+        password: await bcrypt.hash('password123', 10),
         createdAt: new Date(),
       },
       {
         id: 2,
         name: "Werner",
         email: "werner@nyp.com",
+        password: await bcrypt.hash('password123', 10),
         createdAt: new Date(),
       },
       {
         id: 3,
         name: "Coltran",
         email: "coltran@nyp.com",
+        password: await bcrypt.hash('password123', 10),
         createdAt: new Date(),
       },
       {
         id: 4,
         name: "Evata",
         email: "evata@nyp.com",
+        password: await bcrypt.hash('password123', 10),
         createdAt: new Date(),
       },
     ],
   });
 
-  await prisma.classes.createMany({
+  await prisma.classe.createMany({
     data: [
       {
         id: 1,
@@ -73,7 +78,7 @@ async function main() {
   })
 
   // Success message
-  console.log("Seed data successfully inserted into the Users and Classes tables!");
+  console.log("Seed data successfully inserted into the User and Classe tables!");
 }
 
 main()
