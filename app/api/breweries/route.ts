@@ -9,22 +9,19 @@ export async function GET(request: NextRequest) {
 
   const query = searchParams.get('name')?.toLowerCase();
 
-console.log(query)
-console.log(searchParams)
-
   try {
     let breweries;
     if (query) {
-      breweries = await prisma.brewery.findMany({
+      breweries = await prisma.classe.findMany({
         where: {
-          name: {
+          title: {
             contains: query,
             // mode: 'insensitive',
           },
         },
       });
     } else {
-      breweries = await prisma.brewery.findMany();
+      breweries = await prisma.classe.findMany();
     }
     return NextResponse.json(breweries);
   } catch (error) {
