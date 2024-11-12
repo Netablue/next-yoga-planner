@@ -1,21 +1,19 @@
 // app/home/page.tsx
-"use client"
-
+import Sidebar from '@/components/Sidebar/Sidebar';
 import { prisma } from '@/lib/prisma';
 import { User } from '@/app/types/User';
-import Sidebar from '@/components/Sidebar/Sidebar';
 
-async function getUsers(): Promise<User[]> {
+async function fetchUsers(): Promise<User[]> {
   return await prisma.user.findMany();
 }
 
-export default async function Home() {
-  const users = await getUsers();
+export default async function HomePage() {
+  const users = await fetchUsers();
 
   return (
     <div className="flex">
       <Sidebar />
-      <div className="flex-1 p-8">
+      <div className="flex-1 p-8 mt-10">
         <h1 className="text-2xl font-bold mb-4">Users List</h1>
         <ul className="list-disc list-inside">
           {users.length > 0 ? (

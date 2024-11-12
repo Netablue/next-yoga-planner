@@ -1,4 +1,6 @@
-// components/Sidebar.tsx
+// components/Sidebar/Sidebar.tsx
+"use client";
+
 import { useState } from 'react';
 
 export default function Sidebar() {
@@ -34,7 +36,7 @@ export default function Sidebar() {
       {/* Sidebar toggle button */}
       <button
         onClick={toggleSidebar}
-        className="fixed top-4 left-4 z-10 bg-gray-800 text-white px-4 py-2 rounded-md"
+        className="fixed top-4 left-60 z-10 bg-gray-800 text-white px-4 py-2 rounded-md"
       >
         {isOpen ? 'Hide Sidebar' : 'Show Sidebar'}
       </button>
