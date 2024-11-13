@@ -58,3 +58,5 @@ cmd-prisma.txt
 test-connection.ts
 page-example.tsx
 
+
+.vercel
